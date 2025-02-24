@@ -41,8 +41,8 @@ function Home() {
           className="absolute z-[3] w-[100vw]  bottom-[20%] min500:bottom-[10%] scale-125 min500:scale-110 sm:scale-100 min1100:w-[90vw] min1100:bottom-[6%]"
         />
         <h1
-          className="absolute z-[2] text-[3em] min500:text-[4em] md:text-[5em] text-white font-unbounded font-black bottom-[70%] md:bottom-[75%] min1100:text-[6em]"
-          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+          className="absolute z-[2] mb-5 text-[3em] min500:text-[4em] md:text-[5em] text-white font-unbounded font-black bottom-[70%] md:bottom-[75%] min1100:text-[6em]"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
         >
           {" "}
           hak-dari

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const QuestionAnswer = ({ question, answer }) => {
+const QuestionAnswer = ({ question, answer } : { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAnswer = () => {

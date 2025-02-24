@@ -8,7 +8,7 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e : { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -16,13 +16,13 @@ const Contact = () => {
     });
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = (e : Event) => {
     e.preventDefault();
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const serviceId : string = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
     const templateId = "template_8fl1m2b";
 
-    emailjs.send(serviceId, templateId, formData, publicKey).then(
+    emailjs.send(serviceId , templateId, formData, publicKey).then(
       (result) => {
         console.log("SUCCESS!", result.text);
         alert("Message sent successfully!");

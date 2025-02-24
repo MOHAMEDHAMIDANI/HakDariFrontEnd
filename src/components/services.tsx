@@ -51,7 +51,7 @@ const Services = () => {
     },
   ];
 
-  const handleItemClick = (index) => {
+  const handleItemClick = (index : number) => {
     if (index === activeIndex) {
       return;
     } else {

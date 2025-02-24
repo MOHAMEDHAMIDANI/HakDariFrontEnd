@@ -13,7 +13,7 @@ const Hero = () => {
     <div
       className={`w-full relative flex justify-center items-center ${poppins.className}`}
     >
-      <div className="relative h-full w-[90%] bg-red-700 lg:h-100 md:h-96 rounded-3xl overflow-hidden ">
+      <div className="relative h-full w-[90%] lg:h-100 md:h-96 rounded-3xl overflow-hidden ">
         <video
           src="video/herosection.mp4"
           autoPlay

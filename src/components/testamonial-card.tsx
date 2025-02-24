@@ -7,16 +7,27 @@ const Scroller = ({ speed = "fast", direction = "down" }) => {
       addAnimation();
     }
 
-    function addAnimation() {
-      const scrollers = document.querySelectorAll(".scroller");
+    function addAnimation(): void {
+      const scrollers: NodeListOf<Element> =
+        document.querySelectorAll(".scroller");
+
       scrollers.forEach((scroller) => {
         scroller.setAttribute("data-animated", "true");
-        const scrollerInner = scroller.querySelector(".scroller__inner");
-        const scrollerContent = Array.from(scrollerInner.children);
+
+        const scrollerInner = scroller.querySelector(
+          ".scroller__inner"
+        ) as HTMLElement | null;
+        if (!scrollerInner) return;
+
+        const scrollerContent: HTMLElement[] = Array.from(
+          scrollerInner.children
+        ) as HTMLElement[];
 
         scrollerContent.forEach((item) => {
-          const duplicatedItem = item.cloneNode(true);
-          duplicatedItem.setAttribute("aria-hidden", true);
+          const duplicatedItem: HTMLElement = item.cloneNode(
+            true
+          ) as HTMLElement;
+          duplicatedItem.setAttribute("aria-hidden", "true");
           scrollerInner.appendChild(duplicatedItem);
         });
       });

@@ -11,7 +11,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       className={`${poppins.className} ${unbounded.className} ${urbanist.className}`}
     >
       <NavBar />
-      <main>{children}</main>
+      <main className="container mx-auto">{children}</main>
     </div>
   );
 }

@@ -53,7 +53,7 @@ const responsiveOptions = [
   },
 ];
 
-const imageTemplate = (image, index) => {
+const imageTemplate = (image : {src : string , alt : string , label : string , labelClass : string} , index : number) => {
   return (
     <div className="border-1 surface-border border-round m-2 text-center py-5 px-3">
       <div className="relative">

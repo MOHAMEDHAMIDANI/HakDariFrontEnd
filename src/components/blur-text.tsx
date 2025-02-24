@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-function BlurredText({ children }) {
+function BlurredText({ children }: { children: React.ReactNode }) {
   const [isInView, setIsInView] = useState(false);
   const textRef = useRef(null);
 

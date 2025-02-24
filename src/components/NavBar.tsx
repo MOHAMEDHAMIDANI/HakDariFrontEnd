@@ -1,17 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
   return (
-    <header className="absolute top-4 w-full z-[6666]">
+    <header
+      className={`fixed top-4 w-full z-[6666] transition-all duration-300 ${
+        scrolled ? "bg-white/70  shadow-md" : "bg-transparent"
+      }`}
+    >
       <nav className="flex justify-between   items-center px-8 w-full lg:w-[92%] mx-auto md:rounded-full">
         <Link href="/">
           <Image
@@ -27,7 +43,7 @@ const Header = () => {
           className={`nav-links absolute md:static duration-300 ease-in-out ${
             menuOpen ? "right-7 top-7" : "hidden"
           } 
-            md:flex md:items-center md:w-auto md:bg-transparent bg-white/70 backdrop-blur-2xl md:backdrop-blur-none  border border-white/30 
+            md:flex md:items-center md:w-auto md:bg-transparent bg-white/70 backdrop-blur-2xl md:backdrop-blur-none   
             rounded-md md:rounded-full py-4 w-[13em] max-w-full`}
         >
           <ul className="flex flex-col md:flex-row  items-center w-full  md:gap-7 gap-4 px-5 text-small">
@@ -40,7 +56,7 @@ const Header = () => {
             ].map(({ href, label }) => (
               <li
                 key={href}
-                className="text-[#555] hover:text-Landingpages-textPrimary transition font-medium"
+                className="text-[#555] hover:text-Landingpages-textPrimary transition font-medium border-b-2 border-transparent hover:border-Landingpages-brand-primary"
               >
                 <Link href={href}>{label}</Link>
               </li>
@@ -58,7 +74,7 @@ const Header = () => {
 
         <div className="flex items-center gap-4">
           <Link
-            href="/login"
+            href="/Login"
             className="hidden md:block bg-Landingpages-brand-primary text-white px-5 py-2.5 rounded-full hover:bg-Landingpages-brand-secondary transition"
           >
             Login
