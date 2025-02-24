@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black bg-opacity-20 flex flex-col justify-start lg:px-12 px-8 lg:py-12 py-6 w-[100%]">
           <div className="bg-hero-tagbg text-hero-tagtext xl:text-2xl lg:text-xl lg:w-[55%] md:w-[60%] md:text-base sm:text-sm w-[65%] 2xl:text-3xl px-4 py-2 border-white border-2 rounded-full mb-4 xl:w-[40%] text-center flex justify-center items-center font-medium">
             <span>
-              {/* Add the alt attribute here */}
+              {}
               <Image
                 src={"images/pin-drop.svg"}
                 alt="Pin Drop"

@@ -34,8 +34,8 @@ const Header = () => {
             {[
               { href: "/#about", label: "About" },
               { href: "/#services", label: "Services" },
-              { href: "/properties", label: "Properties" },
-              { href: "/agents", label: "Agents" },
+              { href: "/Properties", label: "Properties" },
+              { href: "/Agents", label: "Agents" },
               { href: "/#contact", label: "Contact" },
             ].map(({ href, label }) => (
               <li
@@ -47,7 +47,7 @@ const Header = () => {
             ))}
             <li className="md:hidden">
               <Link
-                href="/login"
+                href="/Login"
                 className="bg-Landingpages-brand-primary text-white px-5 py-2.5 rounded-full hover:bg-Landingpages-brand-secondary transition"
               >
                 Login
